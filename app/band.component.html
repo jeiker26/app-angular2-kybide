@@ -1,1 +1,30 @@
-<h1>Band {{band?.name}}</h1>
+<div id="index-banner" class="parallax-container img-bands" [ngStyle]="{'background-image': 'url(' + band?.image + ')'}">
+  <div class="section no-pad-bot">
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="section">
+
+    <!--   Icon Section   -->
+    <div class="row">
+      <div class="col s12">
+        <div class="icon-block">
+          <div class="col s6">
+            <div class="video-container">
+              <iframe [src]="videoURL" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col s6">
+            <h1 class="header center teal-text text-lighten-2">{{band?.name}}</h1>
+            <h5 class="center">{{band?.description}}</h5>
+            <br>
+            <a href="{{band?.url}}" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 center" target="_blank">URL Sitio Oficial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
