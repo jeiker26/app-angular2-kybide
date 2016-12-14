@@ -14,8 +14,7 @@ import { BandsService } from './bands.service';
 })
 
 export class BandComponent implements OnInit {
-  band: Band;
-  hello: "band";
+  band: any; // TODO: show this error band: Band;
 
   constructor(
     private bandsService: BandsService,
@@ -24,7 +23,6 @@ export class BandComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    let slug = this.route.snapshot.params['slug'];
     this.route.params
       .switchMap((params: Params) => this.bandsService.getBand(params['slug']))
       .subscribe(band => this.band = band);
