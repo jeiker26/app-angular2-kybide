@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent }  from './app.component';
 import { FooComponent }  from './foo.component';
@@ -8,24 +8,25 @@ import { BandComponent }  from './band.component';
 
 import { BandsService } from './bands.service';
 
+const routes: Routes = [
+  {
+    path: 'foo',
+    component: FooComponent
+  },
+  {
+    path: 'bar',
+    component: FooComponent
+  },
+  {
+    path: 'band/:slug',
+    component: BandComponent
+  }
+];
 
 @NgModule({
-  imports:      [
+  imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: 'foo',
-        component: FooComponent
-      },
-      {
-        path: 'bar',
-        component: FooComponent
-      },
-      {
-        path: 'the­rolling­stones',
-        component: BandComponent
-      }
-    ])
+    RouterModule.forRoot(routes)
   ],
   declarations: [
     AppComponent,

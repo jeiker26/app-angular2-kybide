@@ -3,6 +3,7 @@ import { Band } from './band';
 export var BANDS: Band[] = [
   {
     id: 1,
+    slug: 'the­rolling­stones',
     name: 'The Rolling Stones',
     description: 'The Rolling Stones es una banda británica de rock originaria de Londres. La banda se fundó en abril de 1962 por Brian Jones, Mick Jagger, Keith Richards, Bill Wyman, Ian Stewart y Charlie Watts.',
     video: 'https://www.youtube.com/watch?v=GD8Xp0HnIaQ',
@@ -14,6 +15,7 @@ export var BANDS: Band[] = [
   },
   {
     id: 2,
+    slug: 'the-beatles',
     name: 'The Beatles',
     description: '',
     video: '',
@@ -25,6 +27,7 @@ export var BANDS: Band[] = [
   },
   {
     id: 3,
+    slug: 'queen',
     name: 'Queen',
     description: '',
     video: '',

@@ -8,8 +8,8 @@ export class BandsService {
     return Promise.resolve(BANDS);
   }
 
-  getBand(id: number): Promise<Band> {
+  getBand(slug: string): Promise<Band[]> {
     return this.getBands()
-      .then(bands => bands.find(band => band.id === id));
+      .then(bands => bands.find(band => band.slug === slug));
   }
 }
