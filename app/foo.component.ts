@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
-  template: `<h1>Pagina en construccion</h1>`
+  template: `
+    <div class="valign-wrapper">
+      <h1 class="valign center">Página en construcción</h1>
+    </div>`
 })
 export class FooComponent  {
   constructor(

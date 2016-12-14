@@ -16,7 +16,7 @@ import { BandsService } from './bands.service';
 
 export class BandComponent implements OnInit {
   band: any; // TODO: show this error band: Band;
-  videoURL;
+  videoURL: any;
 
   constructor(
     private bandsService: BandsService,
@@ -36,7 +36,7 @@ export class BandComponent implements OnInit {
       .subscribe(band => {
         debugger;
         this.band = band;
-        this.videoURL = this.domSanitizer.bypassSecurityTrustResourceUrl(band.video);
+        this.videoURL = this.domSanitizer.bypassSecurityTrustResourceUrl(this.band.video);
         this.setTitle(this.band.pageTitle);
       });
 
