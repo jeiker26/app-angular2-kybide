@@ -2,14 +2,14 @@ import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location }               from '@angular/common';
+import { Title } from '@angular/platform-browser';
 
 import { Band } from './band';
 import { BandsService } from './bands.service';
 
 @Component({
-  template: `
-    <h1>Band {{band?.name}}</h1>
-  `,
+  moduleId: module.id,
+  templateUrl: 'band.component.html'
   // styleUrls:
 })
 
@@ -19,14 +19,24 @@ export class BandComponent implements OnInit {
   constructor(
     private bandsService: BandsService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private titleService: Title
   ) {}
+
+  public setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
 
   ngOnInit(): void {
     this.route.params
       .switchMap((params: Params) => this.bandsService.getBand(params['slug']))
       .subscribe(band => this.band = band);
-    console.log(this.band);
+
+
+  }
+
+  ngAfterViewChecked(): void {
+    this.setTitle(this.band ? this.band.name : '');
   }
 
   goBack(): void {

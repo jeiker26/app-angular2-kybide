@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
-    <h1>{{title}}</h1>
+    <h1>App Angular2</h1>
     <nav>
       <a routerLink="/">Home</a>
       <a routerLink="/foo">Foo</a>
@@ -15,4 +15,4 @@ import { Component } from '@angular/core';
     <router-outlet></router-outlet>
   `,
 })
-export class AppComponent  { title = 'Home'; }
+export class AppComponent  {}
