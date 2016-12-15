@@ -34,7 +34,6 @@ export class BandComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.bandsService.getBand(params['slug']))
       .subscribe(band => {
-        debugger;
         this.band = band;
         this.videoURL = this.domSanitizer.bypassSecurityTrustResourceUrl(this.band.video);
         this.setTitle(this.band.pageTitle);
