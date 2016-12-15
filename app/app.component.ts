@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-declare var $:JQueryStatic;
+declare var $:any; // TODO: error type
 
 @Component({
   selector: 'my-app',
