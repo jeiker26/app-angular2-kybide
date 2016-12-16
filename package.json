@@ -11,7 +11,8 @@
     "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
     "test-once": "tsc && karma start karma.conf.js --single-run",
     "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "tsc:w": "tsc -w",
+    "postinstall": "npm start"
   },
   "keywords": [],
   "author": "",
@@ -31,8 +32,7 @@
     "rxjs": "5.0.0-rc.4",
     "systemjs": "0.19.40",
     "typings": "^2.0.0",
-    "zone.js": "^0.7.2",
-    "postinstall": "npm start"
+    "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "concurrently": "^3.1.0",
